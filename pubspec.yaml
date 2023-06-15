@@ -5,7 +5,7 @@ description: A new Flutter project.
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
-# The following defines the version and build number for your application.
+# The following defines the version and build numer for your application.
 # A version number is three numbers separated by dots, like 1.2.43
 # followed by an optional build number separated by a +.
 # Both the version and the builder number may be overridden in flutter
@@ -37,7 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   rive: ^0.9.1
   flutter_svg: ^1.1.6
-
+  lottie: ^2.3.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -65,6 +65,8 @@ flutter:
     - assets/Backgrounds/
     - assets/icons/
     - assets/RiveAssets/
+    - img/
+    - fonts/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -79,15 +81,15 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Intel
+    - family: titulo
       fonts:
-        - asset: assets/Fonts/Inter-Regular.ttf
-        - asset: assets/Fonts/Inter-SemiBold.ttf
-          weight: 600
-    - family: Poppins
+        - asset: fonts/Raleway-VariableFont_wght.ttf
+    #       - asset: fonts/Schyler-Italic.ttf
+
+    - family: texto
       fonts:
-        - asset: assets/Fonts/Poppins-Bold.ttf
-          weight: 700
-  #
+        - asset: fonts/Raleway-Italic-VariableFont_wght.ttf
+          style: italic
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
