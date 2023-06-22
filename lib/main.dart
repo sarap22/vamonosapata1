@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rive_animation/screens/animacion/entry_point.dart';
-import 'package:rive_animation/screens/splash.dart';
+import 'package:vamonosapata/screens/splash.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -17,11 +17,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-const defaultInputBorder = OutlineInputBorder(
-  borderRadius: BorderRadius.all(Radius.circular(16)),
-  borderSide: BorderSide(
-    color: Color(0xFFDEE3F2),
-    width: 1,
-  ),
-);

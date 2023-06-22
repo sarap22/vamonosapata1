@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:vamonosapata/screens/registros.dart';
 import '../widget/button.dart';
 
 class info extends StatefulWidget {
@@ -52,11 +53,6 @@ class _infoState extends State<info> with SingleTickerProviderStateMixin{
   @override
   Widget build(BuildContext context) {
     double _opacidad=0;
-    /*List<String> textos = [
-      ' Container( width: 200,height: 350,color: Color(0xE2DEA9).withOpacity(_opacidad),child:Column(children:[Image.asset(img/logo.png, width: 200,),RichText(text: TextSpan(text: textos, style: TextStyle(fontFamily: Raleway, fontSize: 10, color: Colors.black.withOpacity(_opacidad),)),),])',
-      'nur va a quedar con la geta cayada porque soy una chimba de programadora guevon',
-      'no se que putas mas ponerle a esta maricada pero aja, dios quiera todo se solucione y tenga imaginacion alv'
-    ];*/
     String VMV= "Nuestros valores son: ""\n"" 🔹Honestidad ""\n"" 🔹Fiabilidad ""\n"" 🔹Amabilidad ""\n"" 🔹Respeto ""\n"" 🔹Integridad ""\n"" 🔹Atención ""\n"" 🔹Innovación ""\n"" 🔹Proactividad";
 
     String newVMV = VMV.replaceAll("|", "\n");
@@ -69,6 +65,7 @@ class _infoState extends State<info> with SingleTickerProviderStateMixin{
     }
 
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Container(
             color: Color.fromRGBO(116, 199, 184, 9),
             /*AnimatedBackground(
@@ -186,8 +183,8 @@ class _infoState extends State<info> with SingleTickerProviderStateMixin{
                     Stack(
                       children: [
                         Container(
-                          margin: EdgeInsets.only(top:7),
-                          child: Image.asset("img/formafondo.png"),
+                          margin: EdgeInsets.only(top:3),
+                          child: Image.asset("img/formafondo1.png"),
                         ),
                         Container(
                           margin: EdgeInsets.only(top:28),
@@ -202,14 +199,6 @@ class _infoState extends State<info> with SingleTickerProviderStateMixin{
 
                                         ),
                                       ),
-                                      Container(
-                                        margin: EdgeInsets.only(top:122),
-                                        alignment: Alignment.bottomRight,
-                                        child: Transform.rotate(
-                                          angle: -0.2,
-                                          child: Image.asset("img/logo-removebg-preview.png", width: 60),
-                                      )
-                                      )
                                     ],
                                   )
                         )
@@ -227,149 +216,159 @@ class _infoState extends State<info> with SingleTickerProviderStateMixin{
             margin: EdgeInsets.only(left:20, right: 20),
             decoration: BoxDecoration(
                 color: Colors.white.withOpacity(_opacidad),
-                borderRadius: BorderRadius.circular(25)
+                borderRadius: BorderRadius.circular(25),
+
             ),
             child:
-            Column(
-                children:[
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Stack(
-                              children: [
-                                Container(
-                                  margin: EdgeInsets.only(top:40, right: 10),
-                                ),
-                                Container(
-                                    width: 180,
-                                    padding: EdgeInsets.only(top:10, bottom:10, left: 70, right: 5),
-                                    child: Column(
-                                      children: [
-                                        Text('Vámonos a pata dispone de un equipo de paseadores bastante ámplio; ellos son parte de  “NUESTRA MANADA”, ya que tus perros no querrán despegarse de ellos.',
-                                          style: TextStyle(fontFamily: 'titulo', fontSize: 10, color: Colors.black.withOpacity(_opacidad),),
-                                          textAlign: TextAlign.right,
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(builder: (context) => login()),
-                                            );
-                                          },
-                                          child: Text(
-                                            'Quiero conocer a la manada',
-                                            style: TextStyle(
-                                                color: Colors.blue,
-                                                fontSize: 10,
-                                                fontFamily: 'titulo',
-                                                fontWeight: FontWeight.bold
-                                            ),
-                                            textAlign: TextAlign.right,
-                                          ),
-                                        ),
-                                      ],
-                                    )
-                                )
-                              ],
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Row(
-                      children: [
-                            Container(
-                              padding: EdgeInsets.only(bottom: 6, top: 10, left: 10),
-                                width: 187,
-                                child:Column(
-                                    children: [
-                                      Stack(
-                                        children: [
-                                          Container(
-                                            width: 120,
-                                            child: Column(
-                                              children: [
-                                                GestureDetector(
-                                                  onTap: () {
-                                                    Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                          builder: (context) => login()),
-                                                    );
-                                                  },
-                                                  child :
-                                                  Text(
-                                                    'Paseadores por aquí...',
-                                                    style: TextStyle(
-                                                        color: Colors.red,
-                                                        fontSize: 14,
-                                                        fontFamily: 'titulo'
-                                                    ),
-                                                  ),
-                                                ),
-                                                Container(
-                                                    margin: EdgeInsets.only(top: 5),
-                                                    child: Text('Encuentra paseadores cerca para que tu perrito no extrañe tanto su casa.',
-                                                        style: TextStyle(fontFamily: 'titulo', fontSize: 12, color: Colors.black.withOpacity(_opacidad),)
-                                                    )
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-
-                                                  Container(
-                                                    margin: EdgeInsets.only(left: 70),
-                                                      child: Image.asset('img/logo-removebg-preview.png', width: 150),
-                                                  )
-                                              ],
-                                            )
-                                          ],
-                                        ))
-                          ]),
+                Stack(
+                  children: [
+                    Image.asset("img/formafondo2.png"),
+                    Column(
+                        children:[
                           Container(
-                            padding: EdgeInsets.only(top:15, left: 8, right: 8),
-                            height: 125,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25),
                             ),
-                          child:
-                          Center(
                             child: Column(
-                            children: [
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => login()),
-                                  );
-                                },
-                                child: Text(
-                                  'AGENDAR PASEO',
-                                  style: TextStyle(
-                                    color: Colors.blue,
-                                    fontSize: 16,
-                                  ),
-                                ),
-                              ),
-                                Container(
-                                  margin: EdgeInsets.only(top: 10, bottom: 2),
-                                  child: Text('¡Rápido, agenda tu paseo antes de que alguien más ocupe a tu paseador estrella!',
-                                    style: TextStyle(fontFamily: 'titulo', fontSize: 12, color: Colors.black.withOpacity(_opacidad)),
-                                    textAlign: TextAlign.center,
-                                  ),
+                              children: [
+                                Row(
+                                  children: [
+                                    Stack(
+                                      children: [
+                                        Container(
+                                          margin: EdgeInsets.only(top:40, right: 10),
+                                        ),
+                                        Container(
+                                            width: 180,
+                                            padding: EdgeInsets.only(top:10, bottom:10, left: 70, right: 5),
+                                            child: Column(
+                                              children: [
+                                                Text('Vámonos a pata dispone de un equipo de paseadores bastante ámplio; ellos son parte de  “NUESTRA MANADA”, ya que tus perros no querrán despegarse de ellos.',
+                                                  style: TextStyle(fontFamily: 'titulo', fontSize: 10, color: Colors.black.withOpacity(_opacidad),),
+                                                  textAlign: TextAlign.right,
+                                                ),
+                                                GestureDetector(
+                                                  onTap: () {
+                                                    showCustomDialog(
+                                                      context,
+                                                      onValue: (_) {
+                                                      },
+                                                    );
+                                                  },
+                                                  child: Text(
+                                                    'Quiero conocer a la manada',
+                                                    style: TextStyle(
+                                                        color: Colors.blue,
+                                                        fontSize: 10,
+                                                        fontFamily: 'titulo',
+                                                        fontWeight: FontWeight.bold
+                                                    ),
+                                                    textAlign: TextAlign.right,
+                                                  ),
+                                                ),
+                                              ],
+                                            )
+                                        )
+                                      ],
+                                    )
+                                  ],
                                 ),
                               ],
                             ),
-                            )
-                        )
-                  //validacion()
-                ])
+                          ),
+                          Row(
+                              children: [
+                                Container(
+                                    padding: EdgeInsets.only(bottom: 6, top: 10, left: 10),
+                                    width: 187,
+                                    child:Column(
+                                      children: [
+                                        Stack(
+                                          children: [
+                                            Container(
+                                              width: 120,
+                                              child: Column(
+                                                children: [
+                                                  GestureDetector(
+                                                    onTap: () {
+                                                      showCustomDialog(
+                                                        context,
+                                                        onValue: (_) {
+                                                        },
+                                                      );
+                                                    },
+                                                    child :
+                                                    Text(
+                                                      'Paseadores por aquí...',
+                                                      style: TextStyle(
+                                                          color: Colors.red,
+                                                          fontSize: 14,
+                                                          fontFamily: 'titulo'
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Container(
+                                                      margin: EdgeInsets.only(top: 5),
+                                                      child: Text('Encuentra paseadores cerca para que tu perrito no extrañe tanto su casa.',
+                                                          style: TextStyle(fontFamily: 'titulo', fontSize: 12, color: Colors.black.withOpacity(_opacidad),)
+                                                      )
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+
+                                            Container(
+                                              margin: EdgeInsets.only(left: 70),
+                                              child: Image.asset('img/logo-removebg-preview.png', width: 150),
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ))
+                              ]),
+                          Container(
+                              padding: EdgeInsets.only(top:15, left: 8, right: 8),
+                              height: 125,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                              ),
+                              child:
+                              Center(
+                                child: Column(
+                                  children: [
+                                    GestureDetector(
+                                      onTap: () {
+                                        showCustomDialog(
+                                          context,
+                                          onValue: (_) {
+                                          },
+                                        );
+                                      },
+                                      child: Text(
+                                        'AGENDAR PASEO',
+                                        style: TextStyle(
+                                            color: Colors.blue,
+                                            fontSize: 16,
+                                            fontFamily: "titulo",
+                                            fontWeight: FontWeight.bold
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.only(top: 10, bottom: 2),
+                                      child: Text('¡Rápido, agenda tu paseo antes de que alguien más ocupe a tu paseador estrella!',
+                                        style: TextStyle(fontFamily: 'titulo', fontSize: 12, color: Colors.black.withOpacity(_opacidad)),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                          )
+                          //validacion()
+                        ])
+                  ],
+                )
         )
     );
   }
@@ -449,118 +448,6 @@ class _infoState extends State<info> with SingleTickerProviderStateMixin{
   }
 }
 
-class login extends StatelessWidget {
-  const login({Key? key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              color: Color(0xFFCDA3),
-              height: 200,
-              width: double.infinity,
-              margin: EdgeInsets.only(bottom: 25),
-              child: CustomPaint(
-                painter: _HeaderLoginPainter(),
-              ),
-            ),
-              Container(
-                margin: EdgeInsets.only(left: 25, bottom: 10),
-                child: Row(
-                  children: [
-                    Text("SIGN IN/", style: TextStyle(fontFamily: "titulo", fontSize: 25)),
-                    RichText(text: TextSpan(
-                        text: "  SIGN UP", style: TextStyle(
-                        color: Colors.grey,
-                        fontFamily: "titulo",
-                        fontSize: 25
-                    )
-                    ))
-                  ],
-                ),
-              ),
-              validacion()
-        ],
-      )
-      )
-    );
-  }
-}
-
-class registrar extends StatelessWidget {
-  const registrar({Key? key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  height: 150,
-                  width: double.infinity,
-                  margin: EdgeInsets.only(bottom: 20),
-                  child: CustomPaint(
-                    painter: _HeaderLoginPainter(),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(left: 25, bottom: 10),
-                  child: Row(
-                    children: [
-                      Text("SIGN UP/", style: TextStyle(fontFamily: "titulo", fontSize: 25)),
-                      RichText(text: TextSpan(
-                          text: "  SIGN IN", style: TextStyle(
-                          color: Colors.grey,
-                          fontFamily: "titulo",
-                          fontSize: 25
-                      )
-                      ))
-                    ],
-                  ),
-                ),
-                registro()
-              ],
-            )
-        )
-    );
-  }
-}
-
-class paseador extends StatelessWidget {
-  String nombre;
-  paseador(this.nombre,{Key? key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  height: 200,
-                  width: double.infinity,
-                  margin: EdgeInsets.only(bottom: 30),
-                  child: CustomPaint(
-                    painter: _HeaderLoginPainter(),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only( bottom: 15),
-                  child:
-                      Text(nombre+", ¡estás a un paso de convertirte en paseador!", style: TextStyle(fontFamily: "titulo", fontSize: 25),
-                      textAlign: TextAlign.center,),
-                ),
-                pasValidate()
-              ],
-            )
-        )
-    );
-  }
-}
-
 class CustomPath extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
@@ -576,30 +463,5 @@ class CustomPath extends CustomClipper<Path> {
   @override
   bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
     return true;
-  }
-}
-
-class _HeaderLoginPainter extends CustomPainter{
-  @override
-  void paint(Canvas canvas, Size size)
-  {
-    final paint = new Paint();
-    paint.color = Color.fromRGBO(239, 79, 79, 9);
-    paint.style = PaintingStyle.fill;
-
-    final path = new Path();
-    path.lineTo(0, size.height * 1.0);
-    path.lineTo( size.width * 0.2, size.height * 0.8);
-    path.lineTo( size.width, size.height * 1.0);
-    path.lineTo( size.width, 0);
-
-
-    canvas.drawPath(path, paint);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    // TODO: implement shouldRepaint
-     throw UnimplementedError();
   }
 }

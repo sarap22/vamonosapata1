@@ -1,9 +1,10 @@
+import 'package:flutter/material.dart';
+import '../screens/principal.dart';
 import 'rive_model.dart';
 
 class Menu {
   final String title;
   final RiveModel rive;
-
   Menu({required this.title, required this.rive});
 }
 
@@ -44,6 +45,7 @@ List<Menu> sidebarMenus2 = [
         src: "assets/RiveAssets/icons.riv",
         artboard: "TIMER",
         stateMachineName: "TIMER_Interactivity"),
+
   ),
   Menu(
     title: "Notificaciones",
@@ -62,7 +64,6 @@ List<Menu> bottomNavItems = [
         artboard: "CHAT",
         stateMachineName: "CHAT_Interactivity",
         ),
-
   ),
   Menu(
     title: "Search",

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../../model/menu.dart';
 import '../../../utils/rive_utils.dart';
+import '../../../widget/button.dart';
+import '../../principal.dart';
+import '../../registros.dart';
+import '../entry_point.dart';
 import 'side_menu.dart';
 
 class SideBar extends StatefulWidget {
@@ -11,6 +15,7 @@ class SideBar extends StatefulWidget {
 }
 class _SideBarState extends State<SideBar> {
   Menu selectedSideMenu = sidebarMenus.first;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -44,6 +49,39 @@ class _SideBarState extends State<SideBar> {
                         selectedMenu: selectedSideMenu,
                         press: () {
                           RiveUtils.chnageSMIBoolState(menu.rive.status!);
+                          Future.delayed(Duration(milliseconds:370), (){
+                            switch (menu.title) {
+                              case "Home":
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => info()),
+                                );
+                              break;
+                              case "Mi perfil":
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => registerDuenio()),
+                                );
+                              break;
+                              case "Paseadores":
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => navBarVertical()),
+                                );
+                              break;
+                              case "Agendar cita":
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => bLogin()),
+                                );
+                              break;
+                            }
+                          }
+                          );
                           setState(() {
                             selectedSideMenu = menu;
                           });
@@ -63,6 +101,25 @@ class _SideBarState extends State<SideBar> {
                         selectedMenu: selectedSideMenu,
                         press: () {
                           RiveUtils.chnageSMIBoolState(menu.rive.status!);
+                          Future.delayed(Duration(milliseconds:370), (){
+                            switch (menu.title) {
+                              case "Mis mascotas":
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => registroPaseador()),
+                                );
+                                break;
+                              case "Notificaciones":
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => registerDuenio()),
+                                );
+                                break;
+                            }
+                          }
+                          );
                           setState(() {
                             selectedSideMenu = menu;
                           });

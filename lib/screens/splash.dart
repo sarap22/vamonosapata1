@@ -1,6 +1,6 @@
 import 'package:lottie/lottie.dart';
 import 'package:flutter/material.dart';
-import 'package:rive_animation/screens/principal.dart';
+import 'package:vamonosapata/screens/principal.dart';
 
 class splash extends StatefulWidget {
   const splash({Key? key}) : super(key: key);

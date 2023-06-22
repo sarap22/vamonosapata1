@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 
 import '../../../model/menu.dart';
+import '../../principal.dart';
 
 class SideMenu extends StatelessWidget {
-  const SideMenu(
+    const SideMenu(
       {super.key,
       required this.menu,
-      required this.press,
       required this.riveOnInit,
-      required this.selectedMenu});
+      required this.selectedMenu, required this.press});
 
   final Menu menu;
   final VoidCallback press;
@@ -50,11 +50,11 @@ class SideMenu extends StatelessWidget {
                   onInit: riveOnInit,
                 ),
               ),
-              title: Text(
-                menu.title,
-                style: const TextStyle(color: Colors.white),
+              title:  Text(
+                  menu.title,
+                  style: const TextStyle(color: Colors.white),
+                ),
               ),
-            ),
           ],
         ),
       ],

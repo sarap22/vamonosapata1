@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class AnimatedBar extends StatelessWidget {
   const AnimatedBar({
     Key? key,
